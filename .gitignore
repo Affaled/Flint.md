@@ -40,7 +40,7 @@ Desktop.ini
 node_modules/
 
 # Angular Build & Cache
-.angular/cache
+.angular/
 dist/
 tmp/
 out-tsc/
