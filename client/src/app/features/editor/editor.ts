@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { EditorState } from '@codemirror/state';
 import { EditorView, keymap } from '@codemirror/view';
-import { defaultKeymap, history, historyKeymap } from '@codemirror/commands';
+import { defaultKeymap, history, historyKeymap, indentWithTab } from '@codemirror/commands';
 import { markdown } from '@codemirror/lang-markdown';
 
 @Component({
@@ -34,7 +34,7 @@ export class Editor implements AfterViewInit, OnDestroy {
       const state = EditorState.create({
         doc: '# Bem-vindo ao Flint\n\nComece a escrever...w',
         extensions: [
-          keymap.of([...defaultKeymap, ...historyKeymap]),
+          keymap.of([...defaultKeymap, indentWithTab, ...historyKeymap]),
           history(),
           markdown(),
           EditorView.lineWrapping,
